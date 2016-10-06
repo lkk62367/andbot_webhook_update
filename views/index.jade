@@ -1,0 +1,44 @@
+extends layout
+
+block content
+  ul(class='topnav')
+
+    li <a class="active" href="/">Andbot</a>
+    li <a href="/rugby">Rugby</a>
+    li <a href="/angel">Angel</a>
+
+  div(class='container')
+    br
+    br
+    h1= title
+
+    table
+      thead
+        tr
+          th repositoryName
+          th repositoryID
+          th pusherName
+          th beforeID
+          th afterID
+          th dateTime
+          th Update
+      tbody    
+        each webhook in webhooks
+          tr
+            td
+              p #{webhook.repositoryName}
+            td  
+              p #{webhook.repositoryID} 
+            td  
+              p #{webhook.pusherName}               
+            td
+              p #{webhook.beforeID.substr(0,7)}
+            td
+              p #{webhook.afterID.substr(0,7)}
+            td
+              p #{webhook.dateTime.substr(0,10)} Time: #{webhook.dateTime.substr(11,5)}
+            td
+              form(action='/update',method='post')
+                input(type='hidden', value='#{webhook._id}', name='_id' id='_id')
+                input(type='submit', value='Update', class='btn btn-danger') 
+

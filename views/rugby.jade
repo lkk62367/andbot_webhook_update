@@ -1,0 +1,43 @@
+extends layout
+
+block content
+  ul(class='topnav')
+   li <a href="/">Andbot</a>
+   li <a class="active" href="rugby">Rugby</a>
+   li <a href="angel">Angel</a>
+  
+  div(class='container')
+    br
+    br
+    h1= title
+  
+    table
+      thead
+        tr
+          th repositoryName
+          th repositoryID
+          th pusherName
+          th beforeID
+          th afterID
+          th dateTime
+          th Update
+      tbody    
+        each rugby in rugbys
+          tr
+            td
+              p #{rugby.repositoryName}
+            td  
+              p #{rugby.repositoryID} 
+            td  
+              p #{rugby.pusherName}               
+            td
+              p #{rugby.beforeID.substr(0,7)}
+            td
+              p #{rugby.afterID.substr(0,7)}
+            td
+              p #{rugby.dateTime}
+            td
+              form(action='/update',method='post')
+                input(type='hidden', value='#{rugby._id}', name='_id' id='_id')
+                input(type='submit', value='Update', class='btn btn-danger') 
+  

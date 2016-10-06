@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  padding: 0px 15px;
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+@font-face {
+  font-family: myFirstFont;
+  src: url(sansationLight.woff);
+}
+
+@font-face {
+  font-family: myFirstFont;
+  src: url(sansationLight.woff);
+  font-weight: bold;
+}
+
+h1 {
+  font-variant: small-caps;
+  font-family: myFirstFont;
+  font-size: 48px;
+}
+
+ul.topnav {
+  padding: 0px;
+  font-size: 25px;
+  font-variant: small-caps;
+  width: 100%;
+  top: 0;
+  position: fixed;
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+ul.topnav li {
+  float: left;
+}
+
+ul.topnav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {
+  background-color: #111;
+}
+
+ul.topnav li a.active {
+  background-color: #4CAF50;
+}
+
+ul.topnav li.right {
+  float: right;
+}
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.right, ul.topnav li {
+    float: none;
+  }
+}
+
+a {
+  color: #00B7FF;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  padding: 0px 16px;
+  border: 1px solid black;
+}
+
+th {
+  font-size: 22px;
+  font-family: Arial;
+  font-variant: small-caps;
+  padding: 0px 15px;
+  height: 50px;
+  text-align: center;
+  background-color: #5B5B5B;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #d0d0d0
+}
+
+td {
+  padding: 15px;
+  height: 40px;
+  text-align: center;
+  vertical-align: bottom;
+}
+
+input[type=button], input[type=submit], input[type=hidden] {
+  font-size: 20px;
+  width: 150px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
