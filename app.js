@@ -5,9 +5,7 @@ var andbot = require('./routes/andbot');
 var rugby = require('./routes/rugby');
 var angel = require('./routes/angel');
 var path = require('path');
-
 var app = express();
-
 var logger = require('morgan');
 var methodOverride = require('method-override');
 var session = require('express-session');
@@ -15,7 +13,6 @@ var bodyParser = require('body-parser');
 var multer = require('multer');
 var errorHandler = require('errorhandler');
 
-// MongoClient
 var MongoClient = require('mongodb').MongoClient;
 // Database
 var db;
@@ -38,7 +35,7 @@ app.use(function (req, res, next) {
 });
 
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 80);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(logger('dev'));
@@ -69,4 +66,6 @@ app.get('/angel', routes.angel);
 
 app.listen(app.get('port'), function () {
 	console.log('Express server listening on port ' + app.get('port'));
-}); 
+});
+
+
